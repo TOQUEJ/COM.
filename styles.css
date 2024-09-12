@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff6b6b, #f7e7e7, #a3c2c2, #d8a3c2);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: borderAnimation 1.5s infinite alternate;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 0, 255, 0.6);
+    margin: 0;
+}
+
+.emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2em;
+    opacity: 0.7;
+    user-select: none;
+    animation: emojiAnimation 15s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes borderAnimation {
+    0% {
+        border: 5px solid rgba(255, 0, 0, 0.5); /* Rojo */
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    25% {
+        border: 5px solid rgba(0, 255, 0, 0.5); /* Verde */
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    }
+    50% {
+        border: 5px solid rgba(0, 0, 255, 0.5); /* Azul */
+        box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+    }
+    75% {
+        border: 5px solid rgba(255, 255, 0, 0.5); /* Amarillo */
+        box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+    }
+    100% {
+        border: 5px solid rgba(255, 0, 255, 0.5); /* Magenta */
+        box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    }
+}
+
+@keyframes emojiAnimation {
+    0% {
+        transform: translateX(-50vw) translateY(-50vh);
+    }
+    100% {
+        transform: translateX(50vw) translateY(50vh);
+    }
+}
